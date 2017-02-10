@@ -16,7 +16,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.5/main/pg_hba.conf && \
     echo "listen_addresses='*'" >> /etc/postgresql/9.5/main/postgresql.conf &&
 
-ADD postgresql_service /opt/postgresql_service
+ADD postgresql_bootstrap /opt/postgresql_service
 WORKDIR /opt/postgresql_service
 
 # Expose the PostgreSQL port
