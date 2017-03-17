@@ -1,6 +1,7 @@
 Vagrant.configure(2) do |config|
   $script = <<-SCRIPT
   mkdir -p /data
+  apt-get install git
   SCRIPT
 
   config.vm.define "sandbox" do |sandbox|
