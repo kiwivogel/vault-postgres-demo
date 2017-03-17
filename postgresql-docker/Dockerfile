@@ -1,8 +1,5 @@
-#
-# example Dockerfile for http://docs.docker.com/examples/postgresql_service/
-#
-
 FROM debian:jessie-backports
+
 MAINTAINER Kiwivogel
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
@@ -29,5 +26,5 @@ RUN chown postgres.postgres /var/run/postgresql/9.5-main.pg_stat_tmp -R
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
-# Set the default command to run bootstrapscript when starting the container
+# Set the default command to bootstrap DB when starting the container
 CMD ["./postgresql.sh"]

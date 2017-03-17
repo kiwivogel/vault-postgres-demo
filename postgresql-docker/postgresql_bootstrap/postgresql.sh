@@ -24,7 +24,7 @@ ln -s /etc/ssl/certs/ssl-cert-snakeoil.pem $POSTGRESQL_DATA/server.crt
 ln -s /etc/ssl/private/ssl-cert-snakeoil.key $POSTGRESQL_DATA/server.key
 
 #Add Vault Admin account
-$POSTGRESQL_SINGLE <<< "CREATE USER vault WITH INHERIT SUPERUSER PASSWORD 'notaverysafepassword'IF NOT EXISTS;" > /dev/null
+$POSTGRESQL_SINGLE <<< "CREATE USER vault WITH INHERIT SUPERUSER PASSWORD 'notaverysafepassword' IF NOT EXISTS;" > /dev/null
 
 #Pickup component names from list and check for existance of DB's and users.
 
